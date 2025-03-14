@@ -1,5 +1,9 @@
 import { TypeWriter } from "./type-writer.js";
 
+function setWindowHeight() {
+  document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+}
+
 const typeWriter = new TypeWriter();
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -17,6 +21,8 @@ scrollHiddenElements.forEach((el) => observer.observe(el));
 typeWriter.write(heroTitle.children[0], 50, 15, 30);
 typeWriter.write(heroTitle.children[1], 50);
 
+setWindowHeight();
+
 window.addEventListener("scroll", () => {
   const currScroll = window.scrollY,
     scrollToTopPos =
@@ -29,6 +35,9 @@ window.addEventListener("scroll", () => {
   currScroll >= scrollToTopPos
     ? scrollToTopButton.classList.remove("hidden")
     : scrollToTopButton.classList.add("hidden");
+});
+window.addEventListener("resize", () => {
+  if (window.scrollY < 1) setWindowHeight();
 });
 
 scrollToTopButton.addEventListener("click", () => window.scrollTo(0, 0));

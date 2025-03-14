@@ -13,6 +13,8 @@
   --font-size-m: 1.4rem;
   --font-size-l: 2rem;
   --font-size-xl: 2.6rem;
+
+  --vh: 100vh;
 }
 * {
   margin: 0;
@@ -91,7 +93,7 @@ svg {
   transition: opacity 0.275s ease, filter 0.275s ease, transform 0.275s ease,
     color 0.225s ease;
 }
-.hover-highlighted:hover {
+.hover-highlighted:active {
   color: var(--color-text);
 }
 .scroll-hidden {
@@ -126,7 +128,7 @@ svg {
   opacity: 0;
   bottom: 0px;
 }
-.scroll-to-top-btn:not(.hidden):hover {
+.scroll-to-top-btn:not(.hidden):active {
   opacity: 0.75;
 }
 
@@ -150,10 +152,11 @@ section {
 }
 
 #hero .container {
-  height: 100vh;
+  height: var(--vh);
   flex-direction: row;
   justify-content: space-between;
   gap: 0px;
+  transition: height 0.125s linear;
 }
 .hero-title {
   display: flex;
@@ -217,7 +220,7 @@ section {
   transform-origin: bottom;
   transition: transform 0.3s ease;
 }
-.hero-know-more-btn:hover,
+.hero-know-more-btn:active,
 .hero-know-more-btn.toggled {
   color: transparent;
   background-image: linear-gradient(
@@ -229,11 +232,11 @@ section {
   background-clip: text;
   border-color: transparent;
 }
-.hero-know-more-btn:hover::before,
+.hero-know-more-btn:active::before,
 .hero-know-more-btn.toggled::before {
   transform: scaleY(1);
 }
-.hero-know-more-container:has(.hero-know-more-btn:hover)::before,
+.hero-know-more-container:has(.hero-know-more-btn:active)::before,
 .hero-know-more-container:has(.hero-know-more-btn.toggled)::before {
   transform: scaleX(1);
 }
@@ -280,7 +283,7 @@ section {
   background: var(--color-primary-dark);
   transition: background 0.2s ease;
 }
-.about-cv-btn:hover {
+.about-cv-btn:active {
   background: var(--color-primary-light);
 }
 
@@ -327,22 +330,22 @@ section {
   background: var(--color-primary-dark);
   transition: background 0.2s ease;
 }
-.project-preview-btn:hover,
-.project-source-btn:hover,
-.project-image-link:hover ~ .project-preview-btn,
-.project-title-link:hover ~ .project-preview-btn {
+.project-preview-btn:active,
+.project-source-btn:active,
+.project-image-link:active ~ .project-preview-btn,
+.project-title-link:active ~ .project-preview-btn {
   background: var(--color-primary-light);
 }
-.project-image-link:hover .project-image,
-.project-image-link:has(~ .project-preview-btn:hover) .project-image,
-.project-title-link:hover ~ .project-image-link .project-image {
+.project-image-link:active .project-image,
+.project-image-link:has(~ .project-preview-btn:active) .project-image,
+.project-title-link:active ~ .project-image-link .project-image {
   opacity: 1;
   border-color: var(--color-primary-light);
 }
-.project-title-link:hover,
-.project-title-link:has(~ .project-preview-btn:hover),
-.project-title-link:has(~ .project-source-btn:hover),
-.project-title-link:has(~ .project-image-link:hover) {
+.project-title-link:active,
+.project-title-link:has(~ .project-preview-btn:active),
+.project-title-link:has(~ .project-source-btn:active),
+.project-title-link:has(~ .project-image-link:active) {
   color: var(--color-primary-light);
 }
 
@@ -355,7 +358,7 @@ section {
   color: var(--color-text-light);
   transition: color 0.2s ease;
 }
-.contact-icon:hover {
+.contact-icon:active {
   color: var(--color-text);
 }
 .contact-container {
