@@ -4,6 +4,10 @@ function setWindowHeight() {
   document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
 }
 
+const isMobile =
+  ("ontouchstart" in window || navigator.maxTouchPoints > 0) &&
+  window.innerWidth < 768;
+
 const typeWriter = new TypeWriter();
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -37,7 +41,8 @@ window.addEventListener("scroll", () => {
     : scrollToTopButton.classList.add("hidden");
 });
 window.addEventListener("resize", () => {
-  if (window.scrollY < 1) setWindowHeight();
+  if (!isMobile) setWindowHeight();
+  else if (window.scrollY < 1) setWindowHeight();
 });
 
 scrollToTopButton.addEventListener("click", () => window.scrollTo(0, 0));
