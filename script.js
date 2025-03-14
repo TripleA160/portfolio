@@ -1,7 +1,21 @@
 import { TypeWriter } from "./type-writer.js";
 
-function setWindowHeight() {
+function updateWindowHeight() {
   document.documentElement.style.setProperty("--vh", `${window.innerHeight}px`);
+  updateScrollElements();
+}
+function updateScrollElements() {
+  const currScroll = window.scrollY,
+    scrollToTopPos =
+      document.documentElement.scrollHeight - window.innerHeight - 80;
+
+  currScroll > 1
+    ? knowMoreButton.classList.add("toggled")
+    : knowMoreButton.classList.remove("toggled");
+
+  currScroll >= scrollToTopPos
+    ? scrollToTopButton.classList.remove("hidden")
+    : scrollToTopButton.classList.add("hidden");
 }
 
 const isMobile =
@@ -25,24 +39,18 @@ scrollHiddenElements.forEach((el) => observer.observe(el));
 typeWriter.write(heroTitle.children[0], 50, 15, 30);
 typeWriter.write(heroTitle.children[1], 50);
 
-setWindowHeight();
+updateWindowHeight();
 
 window.addEventListener("scroll", () => {
-  const currScroll = window.scrollY,
-    scrollToTopPos =
-      document.documentElement.scrollHeight - window.innerHeight - 40;
-
-  currScroll > 1
-    ? knowMoreButton.classList.add("toggled")
-    : knowMoreButton.classList.remove("toggled");
-
-  currScroll >= scrollToTopPos
-    ? scrollToTopButton.classList.remove("hidden")
-    : scrollToTopButton.classList.add("hidden");
+  if (isMobile && window.scrollY < 10) updateWindowHeight();
+  else updateScrollElements();
 });
 window.addEventListener("resize", () => {
-  if (!isMobile) setWindowHeight();
-  else if (window.scrollY < 1) setWindowHeight();
+  if (!isMobile) updateWindowHeight();
+  else if (window.scrollY < 10) updateWindowHeight();
 });
 
-scrollToTopButton.addEventListener("click", () => window.scrollTo(0, 0));
+scrollToTopButton.addEventListener("click", () => {
+  updateWindowHeight();
+  window.scrollTo(0, 0);
+});
