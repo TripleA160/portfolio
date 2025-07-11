@@ -9,6 +9,7 @@
   --color-background: #1e1e1e;
   --color-background-light: #242424;
 
+  --font-size-xs: 0.8rem;
   --font-size-s: 1rem;
   --font-size-m: 1.4rem;
   --font-size-l: 2rem;
@@ -152,7 +153,9 @@ section {
 }
 
 #hero .container {
+  position: relative;
   height: var(--vh);
+  max-width: 100%;
   flex-direction: row;
   justify-content: space-between;
   gap: 0px;
@@ -167,11 +170,14 @@ section {
   font-weight: 800;
 }
 .hero-image {
-  width: 28rem;
-  border-radius: 12%;
+  height: 85%;
+  position: absolute;
+  right: 40px;
+  bottom: 0;
 }
 .hero-know-more-container {
   position: absolute;
+  z-index: 100;
   bottom: 0px;
   left: 0px;
   display: flex;
@@ -281,7 +287,7 @@ section {
   justify-content: center;
   align-items: center;
   background: var(--color-primary-dark);
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 .about-cv-btn:active {
   background: var(--color-primary-light);
@@ -297,30 +303,49 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
 }
 .project-title-link {
   font-size: var(--font-size-m);
   font-weight: 700;
   color: var(--color-text-light);
+  transition: color 0.2s ease;
 }
 .project-image-link {
-  line-height: 0;
+  margin-top: 8px;
+  border-radius: 10px;
+  width: 25rem;
+  overflow: hidden;
 }
 .project-image {
+  display: block;
   width: 25rem;
-  border-radius: 10px;
-  border-bottom: 4px solid transparent;
   border-color: transparent;
   opacity: 0.93;
-  transition: border-color 0.2s ease, opacity 0.3s ease;
+  transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+.project-tools {
+  font-size: var(--font-size-xs);
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 6px;
+  width: 100%;
+  background: var(--color-primary-dark);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+.project-btns {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  width: 100%;
 }
 .project-preview-btn,
 .project-source-btn {
   -webkit-user-select: none;
   user-select: none;
   font-size: var(--font-size-s);
-  width: 8rem;
+  width: 100%;
   padding: 8px 0px;
   border-radius: 10px;
   border: none;
@@ -328,19 +353,24 @@ section {
   justify-content: center;
   align-items: center;
   background: var(--color-primary-dark);
-  transition: background 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 .project-preview-btn:active,
 .project-source-btn:active,
-.project-image-link:active ~ .project-preview-btn,
-.project-title-link:active ~ .project-preview-btn {
+.project-image-link:active ~ .project-btns .project-preview-btn,
+.project-image-link:active .project-tools,
+.project-title-link:active ~ .project-btns .project-preview-btn,
+.project-title-link:active ~ .project-image-link .project-tools,
+.project-image-link:has(~ .project-btns .project-preview-btn:active)
+  .project-tools,
+.project-image-link:has(~ .project-btns .project-source-btn:active)
+  .project-tools {
   background: var(--color-primary-light);
 }
 .project-image-link:active .project-image,
 .project-image-link:has(~ .project-preview-btn:active) .project-image,
 .project-title-link:active ~ .project-image-link .project-image {
   opacity: 1;
-  border-color: var(--color-primary-light);
 }
 .project-title-link:active,
 .project-title-link:has(~ .project-preview-btn:active),
