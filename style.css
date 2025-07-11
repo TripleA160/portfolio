@@ -373,9 +373,9 @@ section {
   opacity: 1;
 }
 .project-title-link:active,
-.project-title-link:has(~ .project-preview-btn:active),
-.project-title-link:has(~ .project-source-btn:active),
-.project-title-link:has(~ .project-image-link:active) {
+  .project-title-link:has(~ .project-btns .project-preview-btn:active),
+  .project-title-link:has(~ .project-btns .project-source-btn:active),
+  .project-title-link:has(~ .project-image-link:active) {
   color: var(--color-primary-light);
 }
 
