@@ -4,19 +4,19 @@
         --font-size-s: 0.9rem;
         --font-size-m: 1.25rem;
         --font-size-l: 1.75rem;
-        --font-size-title: 1.9rem;
+        --font-size-title: 1.85rem;
     }
 }
 @media (min-width: 1024px) {
-    :root {
-        --font-size-xs: 0.725rem;
-        --font-size-s: 0.85rem;
-        --font-size-m: 1.2rem;
-        --font-size-l: 1.6rem;
-        --font-size-title: 1.8rem;
-    }
-
     @media (min-height: 800px) {
+        :root {
+            --font-size-xs: 0.725rem;
+            --font-size-s: 0.85rem;
+            --font-size-m: 1.2rem;
+            --font-size-l: 1.6rem;
+            --font-size-title: 1.8rem;
+        }
+
         #hero .container {
             flex-direction: column;
             justify-content: space-evenly;
@@ -41,7 +41,7 @@
         --font-size-s: 0.8rem;
         --font-size-m: 1.1rem;
         --font-size-l: 1.4rem;
-        --font-size-title: 1.6rem;
+        --font-size-title: 1.5rem;
     }
 
     #hero .container {
