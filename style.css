@@ -13,7 +13,7 @@
     --font-size-s: 1rem;
     --font-size-m: 1.4rem;
     --font-size-l: 2rem;
-    --font-size-xl: 2.6rem;
+    --font-size-title: 2.6rem;
 
     --vh: 100vh;
 }
@@ -48,23 +48,32 @@ svg {
     content: "";
     position: absolute;
     display: inline;
-    width: 4px;
+    width: 2px;
     height: 1.1em;
     background: var(--color-primary);
-    animation: writing-cursor 0.7s linear 0s infinite;
+    animation: writing-cursor 0.8s linear 0s infinite;
 }
 @keyframes writing-cursor {
     0% {
         opacity: 1;
     }
     20% {
-        opacity: 1;
+        opacity: 0.85;
     }
-    50% {
-        opacity: 0.2;
+    40% {
+        opacity: 0.15;
     }
-    80% {
-        opacity: 1;
+    45% {
+        opacity: 0;
+    }
+    55% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 0.15;
+    }
+    20% {
+        opacity: 0.85;
     }
     100% {
         opacity: 1;
@@ -165,8 +174,8 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 20%;
-    font-size: var(--font-size-xl);
+    height: 15%;
+    font-size: var(--font-size-title);
     font-weight: 800;
 }
 .hero-image {

@@ -5,7 +5,7 @@ export class TypeWriter {
     queue = [];
 
     write(
-        element,
+        element = document.createElement("div"),
         time = 100,
         primaryColorStart = null,
         primaryColorEnd = null,
@@ -22,7 +22,7 @@ export class TypeWriter {
                 text: element.innerText,
             };
             this.queue.push(queueItem);
-            element.innerHTML = "";
+            element.style.opacity = "0";
             return;
         }
 
@@ -31,6 +31,7 @@ export class TypeWriter {
             this.element.classList.add("writing");
             this.text = useElementText ? element.innerText : text;
             this.element.innerHTML = "";
+            element.style.opacity = "1";
         }
 
         if (this.counter < this.text.length) {
@@ -99,6 +100,6 @@ export class TypeWriter {
     }
 
     randomizeTime(time = 100) {
-        return time + Math.floor(Math.random() * time * 0.2);
+        return time + Math.floor(Math.random() * time * 0.1);
     }
 }

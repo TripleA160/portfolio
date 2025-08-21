@@ -39,8 +39,8 @@ const heroTitle = document.querySelector(".hero-title");
 
 scrollHiddenElements.forEach((el) => observer.observe(el));
 
-typeWriter.write(heroTitle.children[0], 51, 15, 30);
-typeWriter.write(heroTitle.children[1], 50);
+typeWriter.write(heroTitle.children[0], 47, 15, 30);
+typeWriter.write(heroTitle.children[1], 47);
 
 updateWindowHeight();
 
