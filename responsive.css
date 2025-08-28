@@ -8,7 +8,7 @@
     }
 }
 @media (min-width: 1024px) {
-    @media (min-height: 800px) {
+    @media (min-height: 900px) {
         :root {
             --font-size-xs: 0.725rem;
             --font-size-s: 0.85rem;
