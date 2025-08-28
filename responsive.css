@@ -61,11 +61,15 @@
         background: var(--color-background-light);
     }
     .hero-know-more-btn {
-        padding: 8px 14px;
+        padding: 7px 13px;
     }
 
     .contact-icon {
         width: 2.5rem;
+    }
+
+    .scroll-to-top-btn {
+        width: 2.8rem;
     }
 }
 @media (max-width: 767px) {
@@ -117,6 +121,10 @@
     .copyright {
         padding: 30px 15px 0px 15px;
     }
+
+    .scroll-to-top-btn {
+        width: 2.4rem;
+    }
 }
 @media (max-width: 424px) {
     :root {
@@ -131,7 +139,7 @@
         height: 51%;
     }
     .hero-know-more-btn {
-        padding: 8px 12px;
+        padding: 7px 12px;
     }
 
     .project-image-link {
