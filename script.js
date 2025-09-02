@@ -10,7 +10,7 @@ function updateWindowHeight() {
 function updateScrollElements() {
     const currScroll = window.scrollY,
         scrollToTopPos =
-            document.documentElement.scrollHeight - window.innerHeight - 80;
+            document.documentElement.scrollHeight - window.innerHeight - 100;
 
     currScroll > 1
         ? knowMoreButton.classList.add("toggled")
@@ -39,7 +39,7 @@ const heroTitle = document.querySelector(".hero-title");
 
 scrollHiddenElements.forEach((el) => observer.observe(el));
 
-typeWriter.write(heroTitle.children[0], 47, 15, 30);
+typeWriter.write(heroTitle.children[0], 47, 15, 34);
 typeWriter.write(heroTitle.children[1], 47);
 
 updateWindowHeight();

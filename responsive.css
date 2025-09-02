@@ -6,32 +6,36 @@
         --font-size-l: 1.75rem;
         --font-size-title: 1.85rem;
     }
-}
-@media (min-width: 1024px) {
-    @media (min-height: 900px) {
-        :root {
-            --font-size-xs: 0.725rem;
-            --font-size-s: 0.85rem;
-            --font-size-m: 1.2rem;
-            --font-size-l: 1.6rem;
-            --font-size-title: 1.8rem;
-        }
+    .hero-image {
+        height: 77%;
+    }
 
-        #hero .container {
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-        .hero-title {
-            justify-content: flex-start;
-            align-items: center;
-            text-align: center;
-        }
-        .hero-image {
-            position: static;
-            height: 62%;
-            border-radius: 24px;
-            padding: 24px 24px 0px 24px;
-            background: var(--color-background-light);
+    @media (min-width: 1024px) {
+        @media (min-height: 900px) {
+            :root {
+                --font-size-xs: 0.725rem;
+                --font-size-s: 0.85rem;
+                --font-size-m: 1.2rem;
+                --font-size-l: 1.6rem;
+                --font-size-title: 1.8rem;
+            }
+
+            #hero .container {
+                flex-direction: column;
+                justify-content: space-evenly;
+            }
+            .hero-title {
+                justify-content: flex-start;
+                align-items: center;
+                text-align: center;
+            }
+            .hero-image {
+                position: static;
+                height: 61%;
+                border-radius: 24px;
+                padding: 24px 24px 0px 24px;
+                background: var(--color-background-light);
+            }
         }
     }
 }
@@ -55,7 +59,7 @@
     }
     .hero-image {
         position: static;
-        height: 62%;
+        height: 61%;
         border-radius: 24px;
         padding: 24px 24px 0px 24px;
         background: var(--color-background-light);
@@ -100,7 +104,7 @@
         display: inline-block;
     }
     .hero-image {
-        height: 57%;
+        height: 56%;
     }
 
     .about-info-container {
@@ -136,7 +140,7 @@
     }
 
     .hero-image {
-        height: 51%;
+        height: 50%;
     }
     .hero-know-more-btn {
         padding: 7px 12px;
